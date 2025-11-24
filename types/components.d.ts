@@ -12,17 +12,19 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Demo: typeof import('./../components/Demo/index.vue')['default']
+    Demo: typeof import('./../src/components/Demo/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Test: typeof import('./../lib/Test/index.vue')['default']
   }
 }
 
 // For TSX support
 declare global {
-  const Demo: typeof import('./../components/Demo/index.vue')['default']
+  const Demo: typeof import('./../src/components/Demo/index.vue')['default']
   const ElButton: typeof import('element-plus/es')['ElButton']
   const RouterLink: typeof import('vue-router')['RouterLink']
   const RouterView: typeof import('vue-router')['RouterView']
+  const Test: typeof import('./../lib/Test/index.vue')['default']
 }

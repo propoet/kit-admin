@@ -1,9 +1,8 @@
-<script setup lang="ts">
-import Demo from '@/components/Demo/index.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Demo />
+  <Test />
 </template>
 
 <style scoped></style>

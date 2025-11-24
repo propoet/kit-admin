@@ -16,18 +16,21 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       resolvers: [ElementPlusResolver()],
-      dts: 'src/types/auto-imports.d.ts',
+      dts: 'types/auto-imports.d.ts',
     }),
     Components({
-      dirs: ['src/components'],
+      dirs: ['src/components', 'lib'],
       extensions: ['vue'],
       resolvers: [ElementPlusResolver()],
-      dts: 'src/types/components.d.ts',
+      dts: 'types/components.d.ts',
     }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      lib: fileURLToPath(new URL('./lib', import.meta.url)),
     },
+    // 添加默认的文件扩展名，防止在导入文件时，需要手动添加文件扩展名
+    extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
 })
