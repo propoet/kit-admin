@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useLocale, setCacheLang } from '@/i18n/useLocale'
 const { elLocale } = useLocale()
-
-// 监听语言切换，保存到缓存
 </script>
 
 <template>

@@ -14,6 +14,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Demo: typeof import('./../src/components/Demo/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElPagination: typeof import('element-plus/es')['ElPagination']
@@ -31,6 +32,7 @@ declare module 'vue' {
 declare global {
   const Demo: typeof import('./../src/components/Demo/index.vue')['default']
   const ElButton: typeof import('element-plus/es')['ElButton']
+  const ElCard: typeof import('element-plus/es')['ElCard']
   const ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
   const ElOption: typeof import('element-plus/es')['ElOption']
   const ElPagination: typeof import('element-plus/es')['ElPagination']
