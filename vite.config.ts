@@ -14,7 +14,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     AutoImport({
-      imports: ['vue', 'vue-router', 'pinia'],
+      imports: ['vue', 'vue-router', 'pinia', { '@/hooks/useCache': ['useCache'] }],
       resolvers: [ElementPlusResolver()],
       dts: 'types/auto-imports.d.ts',
     }),
