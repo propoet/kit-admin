@@ -1,0 +1,4 @@
+// 生成主题的css变量
+@mixin set-theme-var($selector,$var){
+  #{$selector} {}
+}

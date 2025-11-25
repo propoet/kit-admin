@@ -1,0 +1,158 @@
+@use '../../style/themes/default.scss' as *;
+@use '../../style/util.scss' as *;
+@use './css-var.scss' as *;
+
+@include set-alert-var($kit);
+
+.kit-alert {
+  display: flex;
+  align-items: center;
+  padding: kitVar('alert', 'padding');
+  border-radius: kitVar('alert', 'radius');
+  background: elVar('color-primary', 'light-9');
+  border: 1px solid elVar('color-primary', 'light-7');
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  position: relative;
+  .kit-alert-icon {
+    flex-shrink: 0;
+    color: elVar('color-primary');
+    font-size: kitVar('alert', 'icon-size');
+    margin: kitVar('alert', 'icon-margin');
+    display: flex;
+  }
+  .kit-alert-body {
+    flex: 1;
+    overflow: auto;
+  }
+  .kit-alert-title {
+    color: kitVar('alert', 'color');
+    font-size: kitVar('alert', 'title-size');
+    line-height: kitVar('alert', 'title-line-height');
+    & + .kit-alert-text {
+      margin-top: 4px;
+    }
+  }
+  .kit-alert-text {
+    color: kitVar('alert', 'color');
+    font-size: kitVar('alert', 'size');
+  }
+  .kit-alert-close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: kitVar('alert', 'close-size');
+    height: kitVar('alert', 'close-size');
+    border-radius: kitVar('alert', 'close-radius');
+    color: kitVar('alert', 'close-color');
+    font-size: kitVar('alert', 'close-font-size');
+    transition: (color $transition-base, background-color $transition-base);
+    margin: kitVar('alert', 'close-margin');
+    cursor: pointer;
+
+    &:hover {
+      color: kitVar('alert', 'close-hover-color');
+      background: kitVar('alert', 'close-hover-bg');
+    }
+  }
+  // 有描述
+  &.is-rich {
+    align-items: flex-start;
+    padding: kitVar('alert', 'rich-padding');
+    & > .kit-alert-icon {
+      font-size: kitVar('alert', 'rich-icon-size');
+    }
+    & > .kit-alert-body > .kit-alert-title {
+      color: kitVar('alert', 'title-color');
+    }
+  }
+  &.is-success {
+    background: elVar('color-success', 'light-9');
+    border-color: elVar('color-success', 'light-7');
+
+    & > .kit-alert-icon {
+      color: elVar('color-success');
+    }
+  }
+  &.is-warning {
+    background: elVar('color-warning', 'light-9');
+    border-color: elVar('color-warning', 'light-7');
+
+    & > .kit-alert-icon {
+      color: elVar('color-warning');
+    }
+  }
+
+  &.is-error {
+    background: elVar('color-error', 'light-9');
+    border-color: elVar('color-error', 'light-7');
+
+    & > .kit-alert-icon {
+      color: elVar('color-error');
+    }
+  }
+
+  /* 居中 */
+  &.is-center {
+    justify-content: center;
+
+    & > .kit-alert-body {
+      flex: initial;
+    }
+
+    & > .kit-alert-close {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  /* 主题 */
+  &.is-dark {
+    background: elVar('color-primary');
+    border-color: elVar('color-primary');
+
+    & > .kit-alert-icon {
+      color: kitVar('alert-dark', 'title-color');
+    }
+
+    & > .kit-alert-body > .kit-alert-title,
+    & > .kit-alert-body > .kit-alert-text {
+      color: kitVar('alert-dark', 'color');
+    }
+
+    & > .kit-alert-close {
+      color: kitVar('alert-dark', 'close-color');
+
+      &:hover {
+        color: kitVar('alert-dark', 'close-hover-color');
+        background: kitVar('alert-dark', 'close-hover-bg');
+      }
+    }
+
+    &.is-rich > .kit-alert-body > .kit-alert-title {
+      color: kitVar('alert-dark', 'title-color');
+    }
+
+    &.is-success {
+      background: elVar('color-success');
+      border-color: elVar('color-success');
+    }
+
+    &.is-warning {
+      background: elVar('color-warning');
+      border-color: elVar('color-warning');
+    }
+
+    &.is-error {
+      background: elVar('color-error');
+      border-color: elVar('color-error');
+    }
+  }
+}
+
+.kit-alert-fade-enter-from,
+.kit-alert-fade-leave-active {
+  opacity: 0;
+}

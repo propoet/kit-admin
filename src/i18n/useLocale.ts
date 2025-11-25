@@ -50,7 +50,7 @@ export function useLocale() {
 
 // 获取缓存的语言
 export function getCacheLang() {
-  const wsCache = useCache()
+  const wsCache = useCache('localStorage')
   return wsCache.get(I18N_CACHE_NAME) || defaultLocale
 }
 

@@ -3,6 +3,9 @@ import { useI18n } from 'vue-i18n'
 import { setCacheLang } from '@/i18n/useLocale'
 const { locale } = useI18n()
 
+defineOptions({
+  name: 'LocaleSelect',
+})
 // 监听语言切换，保存到缓存
 watch(locale, (newLocale) => {
   setCacheLang(newLocale)

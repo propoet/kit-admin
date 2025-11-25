@@ -1,0 +1,10 @@
+@use '../../style/util.scss' as *;
+
+@mixin set-alert-var($var){
+  .kit-alert{
+    @include set-kit-var('alert', $var);
+  }
+  .kit-alert.is-dark {
+    @include set-kit-var('alert-dark', $var);
+  }
+}
