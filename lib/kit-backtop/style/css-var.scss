@@ -1,0 +1,8 @@
+@use '../../style/util.scss' as *;
+
+/*返回顶部主题变量*/
+@mixin set-backtop-var($var) {
+  .kit-backtop {
+    @include set-kit-var('backtop', $var);
+  }
+}

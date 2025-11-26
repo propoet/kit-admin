@@ -14,7 +14,7 @@ const handleClick = () => {
 <template>
   <el-config-provider :locale="elLocale">
     <el-button @click="handleClick">点击</el-button>
-    <KitAlert ref="alertRef" title="提示" type="success" description="这是一段描述" />
+    <KitAlert ref="alertRef" title="提示" description="这是一段描述" />
     <p>{{ $t('layout.home') }}</p>
     <LocaleSelect />
     <DarkSwitch />

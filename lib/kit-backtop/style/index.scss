@@ -1,0 +1,33 @@
+@use '../../style//themes/default.scss' as *;
+@use '../../style/util.scss' as *;
+@use './css-var.scss' as *;
+
+@include set-backtop-var($kit);
+
+.kit-backtop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: kitVar('backtop', 'color');
+  background: kitVar('backtop', 'bg');
+  box-shadow: kitVar('backtop', 'shadow');
+  transition: (color: $transition-base, background-color: $transition-base);
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  cursor: pointer;
+  z-index: 5;
+
+  & > .el-icon > .kit-arrow-up {
+    stroke-width: 5px;
+  }
+}
+.kit-backtop-fade-enter-from,
+.kit-backtop-fade-leave-active {
+  opacity: 0;
+}
