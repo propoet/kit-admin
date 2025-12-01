@@ -21,7 +21,7 @@ export default defineConfig({
     Components({
       dirs: ['src/components', 'lib'],
       extensions: ['vue'],
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
       dts: 'types/components.d.ts',
     }),
   ],

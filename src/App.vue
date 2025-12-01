@@ -14,6 +14,10 @@ const wrapRef = ref(null)
 
 <template>
   <el-config-provider :locale="elLocale">
+    <kit-breadcrumb
+      :items="[{ title: '首页', to: '/' }, { title: '系统管理' }, { title: '用户管理' }]"
+    />
+
     <KitBarCode value="111" />
 
     <div style="position: relative">
