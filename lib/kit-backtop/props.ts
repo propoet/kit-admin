@@ -32,6 +32,6 @@ export type BacktopProps = ExtractPropTypes<typeof backtopProps>
 /**
  * 事件
  */
-export const backtoopEmits = {
+export const backtopEmits = {
   click: (_e: MouseEvent) => true,
 }
