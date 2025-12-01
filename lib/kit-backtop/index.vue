@@ -34,7 +34,7 @@ const props = defineProps(backtopProps)
 const emit = defineEmits(backtopEmits)
 
 /** 是否显示 */
-const visible = ref(false)
+const visible = ref(true)
 
 /** 目标元素 */
 const targetEl = shallowRef<Element | null>(null)
