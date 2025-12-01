@@ -14,6 +14,8 @@ const wrapRef = ref(null)
 
 <template>
   <el-config-provider :locale="elLocale">
+    <KitBarCode value="111" />
+
     <div style="position: relative">
       <div ref="wrapRef" style="max-height: 320px; overflow: auto; background: rgb(203, 243, 254)">
         <div style="margin-bottom: 120px">内容内容内容</div>
