@@ -13,6 +13,8 @@ const handleClick = () => {
 
 <template>
   <el-config-provider :locale="elLocale">
+    <div style="height: 3000px"></div>
+    <KitBacktop target="#app" />
     <el-button @click="handleClick">点击</el-button>
     <KitAlert ref="alertRef" title="提示" description="这是一段描述" />
     <p>{{ $t('layout.home') }}</p>

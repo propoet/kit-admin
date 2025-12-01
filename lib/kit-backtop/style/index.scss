@@ -1,4 +1,4 @@
-@use '../../style//themes/default.scss' as *;
+@use '../../style/themes/default.scss' as *;
 @use '../../style/util.scss' as *;
 @use './css-var.scss' as *;
 
@@ -16,7 +16,9 @@
   color: kitVar('backtop', 'color');
   background: kitVar('backtop', 'bg');
   box-shadow: kitVar('backtop', 'shadow');
-  transition: (color: $transition-base, background-color: $transition-base);
+  transition:
+    color $transition-base,
+    background-color $transition-base;
   position: fixed;
   right: 40px;
   bottom: 40px;
